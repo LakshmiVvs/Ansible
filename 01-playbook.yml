@@ -1,8 +1,8 @@
 - name: "ping the file"
-  become: "true"
+  
   host: "inventry.ini"
-  task:
+  tasks:
     - name: "ping"
-      ansible builtin.ping:
-      
+      ansible.builtin.ping:
+
 
