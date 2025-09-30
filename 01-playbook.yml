@@ -1,6 +1,6 @@
 - name: "ping the file"
   
-  host: "inventry.ini"
+  host: "frontend"
   tasks:
     - name: "ping"
       ansible.builtin.ping:
