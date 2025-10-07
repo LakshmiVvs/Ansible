@@ -31,7 +31,7 @@
 - name: print variables
   hosts: local
   connection: local
-  course_file:
+  vars_file:
   - vars_file.yml
 
   tasks:
