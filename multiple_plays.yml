@@ -1,0 +1,24 @@
+- name: "play-1"
+  host: local
+  connection: local
+  tasks:
+  - name: play-1 and task-01
+    ansible.builtin.debug:
+     msg: "hlo play-01 friom task-01"
+  - name: "play-01 and task-2"
+    ansible.builtin.debug:
+     msg: "hlo play-01 from task-2"
+
+- name: "play-2"
+  host: local
+  connection: local
+  tasks:
+  - name: play-2 and task-01
+    ansible.builtin.debug:
+     msg: "hlo play-02 friom task-01"
+  - name: "play-01 and task-2"
+    ansible.builtin.debug:
+     msg: "hlo play-02 from task-2"
+
+
+
