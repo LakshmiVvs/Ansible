@@ -18,13 +18,13 @@
   hosts: local
   connection: local
   tasks:
-    - name: "print variables all"
-  vars:
-    course: ansible
-    duration: 10days
-    triner: siva
-    ansible.builtin.debug:
-      msg: "course name : {{ course}} , duration : {{ duration }} , triner: {{ triner }}"
+    - name: print variables all
+      vars:
+        course: ansible
+        duration: 10days
+        triner: siva
+        ansible.builtin.debug:
+          msg: "course name : {{ course }} , duration : {{ duration }} , triner: {{ triner }}"
       
 
     
