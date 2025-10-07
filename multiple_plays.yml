@@ -10,8 +10,8 @@
      msg: "hlo play-01 from task-2"
 
 - name: "play-2"
-  host: local
-  connection: local
+  hosts: localhost
+  connection: localhost
   tasks:
   - name: play-2 and task-01
     ansible.builtin.debug:
