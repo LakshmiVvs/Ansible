@@ -28,16 +28,37 @@
 
 
 
+# - name: print variables
+#   hosts: local
+#   connection: local
+#   vars_files:
+#     - course_file.yml
+
+#   tasks:
+#     - name: print variables all
+#       ansible.builtin.debug:
+#         msg: "course name : {{ course }} , duration : {{ duration }} , triner: {{ triner }}"
+
+
+
 - name: print variables
   hosts: local
   connection: local
-  vars_files:
-    - course_file.yml
+  vars_promt:
+    - name: username
+      promt: what is your name
+      private: false
+
+    - name: password
+      promt: what is your passwd
+      private: true
 
   tasks:
     - name: print variables all
       ansible.builtin.debug:
-        msg: "course name : {{ course }} , duration : {{ duration }} , triner: {{ triner }}"
+        msg: "user name  is : {{ username }}  , password is : {{ password }}"
+
+
 
 
 
