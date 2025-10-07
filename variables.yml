@@ -63,12 +63,10 @@
 - name: print variables
   hosts: local
   connection: local
-
-
   tasks:
     - name: print variables all
       ansible.builtin.debug:
-       msg: "course name : {{ course}} , duration : {{ duration }} , triner: {{ triner }}"
+       msg: "course name : {{ course }} , duration : {{ duration }} , triner: {{ triner }}"
 
 
 
