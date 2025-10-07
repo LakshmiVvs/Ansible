@@ -23,10 +23,8 @@
         course: ansible
         duration: 10days
         triner: siva
-        ansible.builtin.debug:
-          msg: "course name : {{ course }} , duration : {{ duration }} , triner: {{ triner }}"
+      ansible.builtin.debug:
+        msg: "course name : {{ course }} , duration : {{ duration }} , triner: {{ triner }}"
       
 
-    
-      
 
