@@ -49,9 +49,9 @@
       prompt: what is your name
       private: false
 
-    # - name: password
-    #   promt: what is your passwd
-    #   private: true
+    - name: password
+      prompt: what is your passwd
+      private: true
 
   tasks:
     - name: print variables all
