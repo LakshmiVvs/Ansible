@@ -32,7 +32,7 @@
   hosts: local
   connection: local
   vars_file:
-  - vars_file.yml
+    - vars_file.yml
 
   tasks:
     - name: print variables all
