@@ -1,12 +1,31 @@
+# - name: print variables
+#   hosts: local
+#   connection: local
+#   vars:
+#     course: ansible
+#     duration: 10days
+#     triner: siva
+#   tasks:
+#     - name: print variables all
+#       ansible.builtin.debug:
+#        msg: "course name : {{ course}} , duration : {{ duration }} , triner: {{ triner }}"
+
+
+
+
+
 - name: print variables
   hosts: local
   connection: local
-  vars:
-    course: ansible
-    duration: 10days
-    triner: siva
   tasks:
-    - name: print variables all
+  - name: print variables all
+    vars:
+      course: ansible
+      duration: 10days
+      triner: siva
       ansible.builtin.debug:
        msg: "course name : {{ course}} , duration : {{ duration }} , triner: {{ triner }}"
+
+    
+      
 
