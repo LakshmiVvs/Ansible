@@ -44,7 +44,7 @@
 - name: print variables
   hosts: local
   connection: local
-  vars_promt:
+  vars_prompt:
     - name: username
       promt: what is your name
       private: false
