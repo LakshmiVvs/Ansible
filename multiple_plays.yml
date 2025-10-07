@@ -1,5 +1,5 @@
 - name: "play-1"
-  host: localhost
+  hosts: localhost
   connection: localhost
   tasks:
   - name: play-1 and task-01
