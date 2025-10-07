@@ -46,7 +46,7 @@
   connection: local
   vars_prompt:
     - name: username
-      promt: what is your name
+      prompt: what is your name
       private: false
 
     # - name: password
