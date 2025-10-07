@@ -32,12 +32,21 @@
   hosts: local
   connection: local
   vars_file:
-    - vars_file.yml
+    - course_file.yml
 
   tasks:
     - name: print variables all
       ansible.builtin.debug:
         msg: "course name : {{ course }} , duration : {{ duration }} , triner: {{ triner }}"
+
+
+
+
+
+
+
+
+
       
 
 
