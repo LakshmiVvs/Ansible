@@ -19,8 +19,8 @@
     - name: install nginx if RedHat
       ansible.builtin.dnf:
         name: nginx
-        state: present
-      when: ansible_os_family= "RedHat"
+        state: latest
+      when: ansible_os_family= RedHat
 
 
 
