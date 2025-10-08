@@ -66,7 +66,7 @@
   tasks:
     - name: print variables all
       ansible.builtin.debug:
-       msg: "course name : duration : {{ duration }} , triner: {{ triner }}"
+       msg: "username : {{ username }} , course: {{course}}"
 
 
 
