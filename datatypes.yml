@@ -15,4 +15,4 @@
   tasks:
     - name: "print course info"
       ansible.builtin.debug:
-      msg: "tools loke {{ tools }} , course: {{ course }} , is_live: {{ is_live }} ,the concepts are {{concepts}} "
+       msg: "tools loke {{ tools }} , course: {{ course }} , is_live: {{ is_live }} ,the concepts are {{concepts}} "
