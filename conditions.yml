@@ -1,10 +1,20 @@
+# - name: "print the conditions"
+#   hosts: local
+#   connection: local
+#   vars:
+#     number: 5
+#   tasks:
+#     - name: number is lessthan 5
+#       ansible.builtin.debug:
+#         msg: "the num is: {{number}}"
+#       when: number < 10
+
+
+
 - name: "print the conditions"
   hosts: local
   connection: local
-  vars:
-    number: 5
   tasks:
-    - name: number is lessthan 5
-      ansible.builtin.debug:
-        msg: "the num is: {{number}}"
-      when: number < 10
+    name: "gather the facts"
+    ansible.builtin.debug:
+      msg: "{{ansible_facts}}"
