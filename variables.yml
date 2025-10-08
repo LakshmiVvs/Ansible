@@ -60,7 +60,7 @@
 
 
 
-- name: print variables
+- name: print variables inventry
   hosts: local
   connection: local
   tasks:
