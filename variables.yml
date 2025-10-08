@@ -60,6 +60,16 @@
 
 
 
+# - name: print variables inventry
+#   hosts: local
+#   connection: local
+#   tasks:
+#     - name: print variables all
+#       ansible.builtin.debug:
+#        msg: "username : {{ username }} , course: {{course}}"
+
+
+
 - name: print variables inventry
   hosts: local
   connection: local
@@ -67,6 +77,9 @@
     - name: print variables all
       ansible.builtin.debug:
        msg: "username : {{ username }} , course: {{course}}"
+
+
+
 
 
 
