@@ -22,7 +22,7 @@
   tasks:
     - name: istall packages 
       ansible.builtin.package:
-        name: {{ item }}
+        name: "{{ item }}"
         state: latest
         
       loop:
