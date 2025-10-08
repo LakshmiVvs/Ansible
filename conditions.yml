@@ -11,10 +11,13 @@
 
 
 
-- name: "print the conditions"
+- name: "gather the facts"
   hosts: local
   connection: local
   tasks:
-    name: "gather the facts"
-    ansible.builtin.debug:
-      msg: "{{ansible_facts}}"
+    name: "install nginx if redhat"
+    ansible.builtin.dnf:
+      name: nginx
+      state: latest
+    when: ansible_os_family= "redhat"
+            
