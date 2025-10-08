@@ -1,0 +1,14 @@
+- name: print datatypes
+  hosts: local
+  connection: local
+  vars:
+    course: "aws with devops"
+    duration: 120days
+    is_live: true
+    tools:
+    - "linux"
+    - "Aws"
+    - "devops"
+    concepts:
+      cloud: aws
+      cm: ansible
