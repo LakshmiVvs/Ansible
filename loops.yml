@@ -20,9 +20,10 @@
   connection: local
   become: yes
   tasks:
-    - name: istall packages {{ item }}
-      state: present
+    - name: istall packages 
       ansible.builtin.package:
+        name: {{ item }}
+        state: latest
         
       loop:
         - nginx
