@@ -20,9 +20,10 @@
   connection: local
   become: yes
   tasks:
-    - name: istall packages
+    - name: istall packages {{ item }}
+      state: present
       ansible.builtin.package:
-        msg: "packages are: {{ item }}"
+        
       loop:
         - nginx
         - mysql
