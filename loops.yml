@@ -1,13 +1,29 @@
-- name: loops concepts
+# - name: loops concepts
+#   hosts: local
+#   connection: local
+#   become: yes
+#   tasks:
+#     - name: print names
+#       ansible.builtin.debug:
+#         msg: "hello friends: {{ item }}"
+#       loop:
+#         - ram
+#         - rahim
+#         - sita 
+#         - gita
+
+
+
+
+- name: install packages
   hosts: local
   connection: local
   become: yes
   tasks:
-    - name: print names
-      ansible.builtin.debug:
-        msg: "hello friends: {{ item }}"
+    - name: istall packages
+      ansible.builtin.package:
+        msg: "packages are: {{ item }}"
       loop:
-        - ram
-        - rahim
-        - sita 
-        - gita
+        - nginx
+        - mysql
+        - zip
