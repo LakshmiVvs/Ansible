@@ -37,7 +37,7 @@
 
   - name: yml to json
     ansible.builtin.set_fact:
-      student.yml: "{{lookup('file;student.yml') | from_yml}}"
+      student.yml: "{{lookup ('file' , 'student.yml') | from_yml}}"
 
   - name: yml to json
     ansible.builtin.debug:
