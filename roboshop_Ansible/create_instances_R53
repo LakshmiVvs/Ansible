@@ -36,12 +36,12 @@
 
     - name: print publicip
       ansible.builtin.debug:
-        msg: "{{item.ec2_instance[0].public_ip_address }}"
+        msg: "{{item.instances[0].public_ip_address }}"
       loop: "{{ ec2_output.results }}"  
 
     - name: print private
       ansible.builtin.debug:
-        msg: "{{item.ec2_instance[0].private_ip_address }}"
+        msg: "{{item.instances[0].private_ip_address }}"
       loop: "{{ ec2_output.results }}"
 
 
@@ -53,7 +53,7 @@
         type: A
         ttl: 1
         value: "{{item.instances[0].private_ip_address }}"
-        overwrite: true
+        soverwrite: true
       loop: "{{ec2_output.results}}"
 
 
