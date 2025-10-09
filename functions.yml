@@ -5,9 +5,9 @@
     technologies: linux , aws , devops
     ipaddress: 324.534.534.2
     ipaddress1: 234.199.25.23
-    tags:
-      application: payment
-      env: devops
+    # tags:
+    #   application: payment
+    #   env: devops
     tagslist:
       - application: payment
         env: devops
@@ -30,9 +30,9 @@
     ansible.builtin.debug:
       msg: "{{ tagslist | items2dict }}"
 
-  - name: dict2item functions
-    ansible.builtin.debug:
-      msg: "{{ tags | dict2items }}"
+  # - name: dict2item functions
+  #   ansible.builtin.debug:
+  #     msg: "{{ tags | dict2items }}"
 
   - name: yml to json
     ansible.builtin.set_fact:
