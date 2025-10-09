@@ -9,15 +9,15 @@
     domain_name: "lakshmimopidevi.fun"
     instances:
       - mongodb
-      # - radis 
-      # - rabitmq
-      # - catologue
-      # - cart
-      # - user
-      # - mysql
-      # - payment
-      # - shipping
-      # - frontend
+      - radis 
+      - rabitmq
+      - catologue
+      - cart
+      - user
+      - mysql
+      - payment
+      - shipping
+      - frontend
 
   tasks:
     - name: launch instance
