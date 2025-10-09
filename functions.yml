@@ -9,10 +9,11 @@
     #   application: payment
     #   env: devops
     tagslist:
-      - application: payment
-        env: devops
-      - key: env
-        vslue: devops
+    - key: application
+      value: payment
+    - key: env
+      value: devops
+
   tasks: 
   - name: split functions
     ansible.builtin.debug:
@@ -26,7 +27,7 @@
     ansible.builtin.debug:
       msg: "{{ technologies |  lower }}"
 
-  - name: item2dict functions
+  - name: items2dict functions
     ansible.builtin.debug:
       msg: "{{ tagslist | items2dict }}"
 
