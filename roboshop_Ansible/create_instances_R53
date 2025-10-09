@@ -17,5 +17,5 @@
       image_id: "{{ ami_id}}"
       tags:
        name: mongos
-      loop: "{{instances}}"
-      register: ec2_output
+  loop: "{{instances}}"
+  register: ec2_output
