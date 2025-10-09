@@ -35,20 +35,20 @@
     ansible.builtin.debug:
       msg: "{{ tags | dict2items }}"
 
-  - name: yml to json
-    ansible.builtin.set_fact:
-      student.yml: "{{ lookup('file', 'student.yml') | from_yaml }}"
+  # - name: yml to json
+  #   ansible.builtin.set_fact:
+  #     student.yml: "{{ lookup('file', 'student.yml') | from_yaml }}"
 
 
-  - name: yml to json
-    ansible.builtin.debug:
-      msg: "json: {{ student.yml  | to_json }}"
+  # - name: yml to json
+  #   ansible.builtin.debug:
+  #     msg: "json: {{ student.yml  | to_json }}"
 
-  - name: save json into file
-    ansible.builtin.copy:
-      dest: ./student.json
-      content:
-        msg: "{{student_yml | to_nice_json}}"
+  # - name: save json into file
+  #   ansible.builtin.copy:
+  #     dest: ./student.json
+  #     content:
+  #       msg: "{{student_yml | to_nice_json}}"
 
   - name: check ip address   
     ansible.builtin.debug:
