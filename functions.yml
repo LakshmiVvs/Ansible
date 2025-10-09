@@ -16,7 +16,7 @@
   tasks: 
   - name: split functions
     ansible.builtin.debug:
-      msg: "{{ technologies | split ';'}}"
+      msg: "{{ technologies | split (',')}}"
 
   - name: upper functions
     ansible.builtin.debug:
