@@ -8,11 +8,11 @@
   tags:
     application: payment
     env: devops
-  tagslist:
-    - application: payment
-      env: devops
-    - key: env
-      vslue: devops
+    tagslist:
+      - application: payment
+        env: devops
+      - key: env
+        vslue: devops
   tasks: 
   - name: split functions
     ansible.builtin.debug:
