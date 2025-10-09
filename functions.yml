@@ -28,11 +28,11 @@
 
   - name: item2dict functions
     ansible.builtin.debug:
-      msg: "{{ tags  | item2dict }}"
+      msg: "{{ tagslist | items2dict }}"
 
   - name: dict2item functions
     ansible.builtin.debug:
-      msg: "{{ tags  | dict2item }}"
+      msg: "{{ tags | dict2items }}"
 
   - name: yml to json
     ansible.builtin.set_fact:
