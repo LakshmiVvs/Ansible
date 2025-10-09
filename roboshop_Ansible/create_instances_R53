@@ -32,15 +32,15 @@
     domain_name: "lakshmimopidevi.fun"
     instances:
       - mongodb
-      - radis 
-      - rabitmq
-      - catologue
-      - cart
-      - user
-      - mysql
-      - payment
-      - shipping
-      - frontend
+      # - radis 
+      # - rabitmq
+      # - catologue
+      # - cart
+      # - user
+      # - mysql
+      # - payment
+      # - shipping
+      # - frontend
 
   tasks:
     - name: launch instance
@@ -55,14 +55,24 @@
       register: ec2_output
     - name: print ec2 output
       ansible.builtin.debug:
-        msg "{{ec2_output}}"
+        msg: "{{ec2_output}}"
 
     - name: print publicip
       ansible.builtin.debug:
         msg: "{{item.ec2_instance[0].public_ip_address }}"
       loop: "{{ instances.item }}"  
 
-    - name: print publicip
+    - name: print private
       ansible.builtin.debug:
-        msg: "{{item.ec2_instance[0].public_ip_address }}"
+        msg: "{{item.ec2_instance[0].private_ip_address }}"
       loop: "{{ instances.item }}"
+    - name: create route53
+      amazon.aws.route53:
+      state: present
+      zone: "{{domain_name}}"
+      record: "{{ item.item}}.{{ domain_name}}"
+      type: A
+      ttl: 1
+      value: "{{item.ec2_instance[0].private_ip_address }}"
+      overwrite: true
+      loop: "{{ec2_output.results}}"
