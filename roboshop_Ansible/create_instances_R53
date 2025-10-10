@@ -9,7 +9,7 @@
     domain_name: "lakshmimopidevi.fun"
     instances:
       - mongodb
-      # - radis 
+      - redis 
       # - rabitmq
       # - catologue
       # - cart
