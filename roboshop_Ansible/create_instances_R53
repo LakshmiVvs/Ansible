@@ -10,11 +10,11 @@
     instances:
       - mongodb
       - redis 
-      # - rabitmq
+      - rabbitmq
       # - catologue
       # - cart
       # - user
-      # - mysql
+      - mysql
       # - payment
       # - shipping
       # - frontend
