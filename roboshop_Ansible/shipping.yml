@@ -100,9 +100,9 @@
          - /app/db/app-user.sql
          - /app/db/master-data.sql
 
-    - name: start ans enable cart service
+    - name: start ans enable shipping service
       ansible.builtin.service:
-        name: cart
+        name: shipping
         state: started
         enabled: yes
 
