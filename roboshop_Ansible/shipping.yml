@@ -1,0 +1,97 @@
+- name: setup shipping server
+  hosts: shipping
+  become: true
+
+  tasks:
+    
+    - name: install maven
+      ansible.builtin.dnf:
+        name: maven
+        state: present
+
+    - name: create system user
+      ansible.builtin.user:
+        name: roboshop
+        component: roboshop system user
+        system: true
+        shell: /sbin/nologin
+        home: /app    
+
+
+    - name: delete app directory before create
+      ansible.builtin.file:
+        path: /app
+        state: absent
+
+    - name: create app directory
+      ansible.builtin.file:
+        state: directory
+        path: /app
+
+
+    - name: delete shipping file before create
+      ansible.builtin.file:
+        path: /tmp/shipping.zip
+        state: absent
+
+
+    - name: download application
+      ansible.builtin.get_url:
+        url: https://roboshop-artifacts.s3.amazonaws.com/shipping-v3.zip
+        dest: /tmp/shipping.zip
+
+    - name: unzip the application
+      ansible.builtin.unarchive:
+        src: /tmp/shipping.zip
+        dest: /app
+        remote_src: yes
+
+    - name: install dependencies
+      ansible.builtin.command: mvn clean package
+      args:
+        chdir: /app
+
+    - name: move jar file
+      ansible.builtin.command: mv target/shipping-1.0.jar shipping.jar
+
+    - name: copy service file
+      ansible.builtin.copy:
+        src: shipping.service
+        dest: /etc/systemd/system/shipping.service
+
+    - name: deamon-reload
+      ansible.builtin.service:
+        name: shipping
+        state: started
+        enable: yes
+        daemon-reload: true
+
+    - name: import shipping data into mysql
+      community.mysql.mysql_db:
+        state: import
+        name: all
+        login_host: mysql.lakshmi.mopidevi.fun
+        login_user: root
+        login_password: RoboShop@1
+        target: "{{item}}"
+      loop:
+        - /app/db/scama.sql
+        - /app/db/app-usre.sql
+        - /app/db/master-data.sql
+
+    - name: deamon-reload
+      ansible.builtin.service:
+        name: user
+        state: started
+        enable: yes
+        daemon-reload: true
+
+
+
+
+
+
+
+
+
+
