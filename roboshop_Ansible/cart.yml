@@ -18,7 +18,7 @@
     - name: create system cart
       ansible.builtin.cart:
         name: roboshop
-        component: roboshop system cart
+        comment: roboshop system cart
         system: true
         shell: /sbin/nologin
         home: /app

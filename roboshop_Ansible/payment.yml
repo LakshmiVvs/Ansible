@@ -16,7 +16,7 @@
     - name: create system payment
       ansible.builtin.user:
         name: roboshop
-        component: roboshop system payment
+        comment: roboshop system payment
         system: true
         shell: /sbin/nologin
         home: /app
