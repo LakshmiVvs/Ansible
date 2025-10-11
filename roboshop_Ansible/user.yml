@@ -66,6 +66,6 @@
         name: user
         state: started
         enable: yes
-        daemon-reload: true
+        deamon-reload: true
 
 
