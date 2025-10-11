@@ -11,13 +11,13 @@
       - mongodb
       - redis 
       - rabbitmq
-      # - catologue
-      # - cart
-      # - user
+      - catalogue
+      - cart
+      - user
       - mysql
-      # - payment
-      # - shipping
-      # - frontend
+      - payment
+      - shipping
+      - frontend
 
   tasks:
     - name: launch instance
