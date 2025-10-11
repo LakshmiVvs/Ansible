@@ -78,6 +78,10 @@
       ansible.builtin.shell: mongosh --host mongodb.lakshmimopidevi.fun </app/db/master-data.js
       when: catalogue_output.stdout | int < 0
 
+    - name: daemon reload
+      ansible.builtin.systemd:
+        daemon_reload: yes
+
     - name: start ans enable catalogue service
       ansible.builtin.service:
         name: catalogue
