@@ -79,12 +79,11 @@
         - /app/db/app-usre.sql
         - /app/db/master-data.sql
 
-    - name: deamon-reload
+    - name: start ans enable cart service
       ansible.builtin.service:
-        name: user
+        name: cart
         state: started
-        enable: yes
-        deamon-reload: true
+        enabled: yes
 
 
 
