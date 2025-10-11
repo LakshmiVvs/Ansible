@@ -9,9 +9,9 @@
         state: present
 
       loop: 
-        -python3
-        -gcc
-        -python3-devel
+        - python3
+        - gcc
+        - python3-devel
 
     - name: create system payment
       ansible.builtin.user:
