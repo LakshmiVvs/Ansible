@@ -61,12 +61,11 @@
         src: payment.service
         dest: /etc/systemd/system/payment.service
 
-    - name: deamon-reload
+    - name: start ans enable payment service
       ansible.builtin.service:
         name: payment
         state: started
-        enable: yes
-        deamon-reload: true
+        enabled: yes
 
 
 
