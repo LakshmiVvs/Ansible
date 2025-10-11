@@ -25,8 +25,9 @@
 
     - name: create app directory
       ansible.builtin.file:
-        state: directory
-        path: /app
+      path: /app
+      state: directory
+        
 
 
     - name: delete shipping file before create
@@ -52,19 +53,24 @@
         chdir: /app
 
     - name: move jar file
-      ansible.builtin.command: mv target/*.jar shipping.jar
+      ansible.builtin.shell: mv target/*.jar shipping.jar
+      args:
+        chdir: /app
 
     - name: copy service file
       ansible.builtin.copy:
         src: shipping.service
         dest: /etc/systemd/system/shipping.service
 
-    - name: deamon-reload
+    - name: daemon reload
+      ansible.builtin.systemd:
+        daemon_reload: yes
+
+    - name: start and enable shipping service
       ansible.builtin.service:
         name: shipping
         state: started
-        enable: yes
-        daemon-reload: true
+        enabled: yes
 
     - name: import shipping data into mysql
       community.mysql.mysql_db:
