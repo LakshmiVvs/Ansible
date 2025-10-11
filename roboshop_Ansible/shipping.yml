@@ -91,7 +91,7 @@
       community.mysql.mysql_db:
         state: import
         name: all
-        login_host: mysql.lakshmi.mopidevi.fun
+        login_host: mysql.lakshmimopidevi.fun
         login_user: root
         login_password: RoboShop@1
         target: "{{item}}"
