@@ -67,8 +67,8 @@
         state: started
         enable: yes
         
-    - name: daemon reload
-      ansible.builtin.systemd:
-      daemon_reload: yes
+    # - name: daemon reload
+    #   ansible.builtin.systemd:
+    #   daemon_reload: yes
 
 
