@@ -6,8 +6,23 @@
     
     - name: install maven
       ansible.builtin.dnf:
-        name: maven
+        name: "{{item}}"
         state: present
+
+      loop:
+        -maven
+        -mysql
+
+    - name: install mysql
+      ansible.builtin.pip:
+        executable: pip3.9
+        name: "{{item}}"
+
+      loop:
+        -cryptograpy
+        -PyMySql
+    
+  
 
     - name: create system user
       ansible.builtin.user:
