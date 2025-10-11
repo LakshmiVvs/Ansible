@@ -96,9 +96,9 @@
         login_password: RoboShop@1
         target: "{{item}}"
       loop:
-        - /app/db/scama.sql
-        - /app/db/app-usre.sql
-        - /app/db/master-data.sql
+         - /app/db/schema.sql
+         - /app/db/app-user.sql
+         - /app/db/master-data.sql
 
     - name: start ans enable cart service
       ansible.builtin.service:
